@@ -19,34 +19,31 @@ const users = [{ id:1, name: "Gaby" }, { id:2, name:"Dorian" }, { id:3, name: "C
  
  const getUser = (id) => {
      const user = users.find(user => user.id == id)
-     const promise = new Promise((resolve, reject) => {
+     return promise = new Promise((resolve, reject) => {
         if(!user) reject(`Doesn´t exist a user with id ${id}`)
         else resolve(user)
-    
      })
-     
-     return promise
-
     }
     
  
- const getEmail = (user, cb) => {
+ const getEmail = (user) => {
      const email = emails.find(email => email.id == user.id)
-     if (!email) cb(`${user.name} hasn´t email`)
-     else cb(null, {
-         id: user.id,
-         name: user.name,
-         name: email.email
+     return promise = new Promise((resolve, reject) => {
+        if(!email) reject(`${user.name} hasn´t email`)
+        else resolve({
+           id: user.id,
+           name: user.name,
+           email: email.email
+        })  
      })
  }
  
- getUser(5)
-    .then(user => console.log(user))
-    .catch(err => console.log(err))
+//  getUser(2)
+//     .then(user => getEmail(user))
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))
 
-//  if (err) return console.log(err)
- 
-//      getEmail(user, (err, res) => {
-//          if (err) return console.log(err)
-//          console.log(res);
-//      })
+    getUser(2)
+    .then(getEmail)
+    .then(console.log)
+    .catch(console.log)
