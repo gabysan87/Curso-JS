@@ -23,11 +23,11 @@ const person = {
 
 // console.log(name, age, email)
 
-const numbers = [1, 2, 3, 4]
+// const numbers = [1, 2, 3, 4]
 
-const [a, b, terceraPosicion] = numbers
+// const [a, b, terceraPosicion] = numbers
 
-console.log(terceraPosicion)
+// console.log(terceraPosicion)
 
 // const printPerson = ({ name }) => {
 //     console.log(name)
@@ -39,10 +39,13 @@ console.log(terceraPosicion)
 
 // printPerson(person)
 
-// const getUsers = async () => {
-//     const { data: users } = await axios.get('https://jsonplaceholder.typicode.com/users')
+// Ejemplo axios peticion
 
-//     console.log(users)
-// }
+const getUsers = async () => {
+    const  { data: users } = await axios.get('https://jsonplaceholder.typicode.com/users')
 
-// getUsers()
+    console.log(users)
+}
+
+getUsers()
+
